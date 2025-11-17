@@ -1,0 +1,64 @@
+{
+  "CPI Release": [
+    "cpi_headline_mom",
+    "cpi_headline_yoy"
+  ],
+  "DurableGoodsOrders Release": [
+    "durable_goods_new_orders_mom",
+    "durable_goods_new_orders_yoy"
+  ],
+  "FOMC Decision": [
+    "fed_funds_effective",
+    "fed_funds_target_lower",
+    "fed_funds_target_upper"
+  ],
+  "GDP Release": [
+    "gdp_qoq",
+    "gdp_yoy"
+  ],
+  "HousingStarts Release": [
+    "housing_starts_mom",
+    "housing_starts_yoy"
+  ],
+  "IndustrialProduction Release": [
+    "industrial_production_mom",
+    "industrial_production_yoy"
+  ],
+  "InitialJoblessClaims Release": [
+    "initial_claims_level",
+    "initial_claims_wow_change"
+  ],
+  "JOLTS Release": [
+    "jolts_job_openings_mom",
+    "jolts_job_openings_yoy"
+  ],
+  "MichiganSentiment Release": [
+    "michigan_sentiment_mom",
+    "michigan_sentiment_yoy"
+  ],
+  "NonfarmPayrolls Release": [
+    "nfp_payroll_change",
+    "unemployment_rate"
+  ],
+  "PCE Release": [
+    "core_pce_mom",
+    "pce_price_index_mom",
+    "core_pce_yoy"
+  ],
+  "PPI Release": [
+    "ppi_headline_mom",
+    "ppi_headline_yoy"
+  ],
+  "RetailSales Release": [
+    "retail_sales_mom",
+    "retail_sales_yoy"
+  ],
+  "TradePrices Release": [
+    "export_prices_mom",
+    "import_prices_mom",
+    "export_prices_yoy"
+  ],
+  "UnemploymentRate Release": [
+    "unemployment_rate"
+  ]
+}

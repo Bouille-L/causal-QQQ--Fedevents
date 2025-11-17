@@ -1,0 +1,66 @@
+# Layer4 — Causal Inference & Synthetic Control
+
+Layer 4 implements the causal analysis pipeline for macro event effects using cleaned option features and aligned event datasets. 
+It provides propensity-score matching, **structural causal modeling (SCM)**, and **synthetic control method** for dose-response function (DRF) estimation 
+for event types (e.g., FOMC, CPI).
+
+## Purpose
+
+- Estimate causal effects of macro events on market outcomes using matched controls, SCM, and synthetic control modeling.
+- Support diagnostics: covariate balance, overlap, residual sanity plots, and rolling time-series cross-validation metrics.
+- Output interpretable ATT/ATE estimates and dose-response curves per event family.
+
+## Main Components
+
+- `scm.py`: Main pipeline for DRF estimation, diagnostics, and plotting using SCM and synthetic control.
+- `matching.py`: Propensity-score matching and inverse probability weighting (IPW).
+- `scm_outputs_ewm/`: Output directory for DRF plots, JSON summaries, and diagnostics.
+- `matched_pairs/`: Stores matched pairs and summary tables.
+
+## Methods Used
+
+- **Structural Causal Modeling (SCM):** Framework for identifying and estimating causal effects.
+- **Synthetic Control Method:** Constructs a weighted combination of control units to estimate counterfactual outcomes.
+- **Propensity-Score Matching:** Matches treated and control samples to reduce confounding.
+- **Dose-Response Function (DRF) Estimation:** Quantifies the effect of treatment intensity.
+
+## Inputs
+
+- Treatment dataset: `../Layer3/Treatment_dataset_Fedmacr-_event/events_aligned_L3_E1.parquet`
+- Control dataset: `../Layer3/Control_dataset_days_without_events/control_sample_QQQ_aligned.parquet`
+- Cleaned option features: `../Layer1/Options_features_L1_VF.parquet`
+- FOMC dates: `../Layer2/fomc_statement_dates.csv`
+
+## Outputs
+
+- DRF plots and JSON summaries per event type (`scm_outputs_ewm/DRF_*`)
+- Covariate balance and overlap statistics (`scm_outputs_ewm/`)
+- Matched pairs and summary tables (`matched_pairs/`)
+- Lead test and residual diagnostics
+
+## Usage
+
+Run the main pipeline:
+
+```sh
+python scm.py
+```
+
+Run matching per event family:
+
+```sh
+python matching.py --treated <treated_parquet> --controls <control_parquet> --k 3
+```
+
+## Requirements
+
+- Python 3.8+
+- pandas, numpy, scikit-learn, matplotlib, pyarrow
+- yfinance (for FOMC futures-based expectations)
+
+## References
+
+- `scm.py`: Main pipeline and DRF estimation
+- `matching.py`: Matching and ATT/ATE estimation
+
+See outputs in `scm_outputs_ewm/` and `matched_pairs/`.
