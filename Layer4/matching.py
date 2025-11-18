@@ -409,7 +409,7 @@ def _default_covariates() -> List[str]:
 
 
 def main():
-    # Default paths (hardcoded) - change these if you want different files
+    # Default paths (hardcoded) - # NOTE: Adjust the file path below to match your local setup.
     DEFAULT_TREATED = r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer3\Treatment_dataset_Fedmacr-_event\events_aligned_L3_E1.parquet"
     DEFAULT_CONTROLS = r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer3\Control_dataset_days_without_events\control_sample_QQQ_aligned.parquet"
     DEFAULT_OUT = r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer4\matched_pairs.parquet"
