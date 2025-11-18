@@ -11,7 +11,10 @@ logging.basicConfig(
 )
 
 # 1) Read and concatenate option-data parquet files
-# NOTE: Adjust the file path below to match your local setup.
+# NOTE 01: Adjust the file path below to match your local setup.
+# NOTE 02: We merge the 2-year data files here to create a single, continuous dataset covering 2011 to 2025.
+# This is necessary because the data supplier API restricts loading the entire range in one request.
+# Merging ensures all data is available for downstream analysis.
 option_files = [
     r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer1\qqq_optiondata_1.parquet",
     r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer1\qqq_optiondata_2.parquet",
