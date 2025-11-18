@@ -41,9 +41,9 @@ The objective of this folder is to build and enginner features using option data
   ### inputs
     Options_features_L1_A.parquet (from Layer-1A)
   ### outputs
-        - nan_coverage_all_columns.csv — NaN share for every column.
-        - stats_<family>.csv — Percentiles & robust spread per feature family and tenor (e.g., stats_rel_spread.csv, stats_turnover.csv, …).
-        - proposed_thresholds.csv — Tenor-specific keep thresholds for REL_SPREAD_*, OI_SUM_*, and (if present) DOLLAR_VOL_*.
+        - NaN share for every column.
+        - stats_<family>.csv — Percentiles & robust spread per feature family and tenor.
+        - proposed_thresholds.csv — Tenor-specific keep thresholds for REL_SPREAD_*, OI_SUM_*, and DOLLAR_VOL_*.
         - proposed_winsor_caps.csv — Tenor-specific p1/p99 caps for volatile ratios (PCR_*, TURNOVER_*).
         
 
