@@ -217,7 +217,7 @@ def align(control_df: pd.DataFrame, cov_df: pd.DataFrame, ts_series: pd.Series |
 
 def main():
     parser = argparse.ArgumentParser()
- 
+  # NOTE: Adjust the file path below to match your local setup.
     default_control = r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer3\QQQ_1min_2011-01_2025-07.parquet"
     default_cov = r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer1\Options_features_L1_VF.parquet"
     default_out = r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer3\Control_dataset_days_without_events\control_sample_QQQ_aligned.parquet"
