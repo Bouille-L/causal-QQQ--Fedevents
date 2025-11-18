@@ -253,6 +253,7 @@ if __name__ == "__main__":
     """Entry point to run a historical 1-min intraday backfill producing one consolidated parquet under Layer3."""
     START_MONTH = "2011-01"
     END_MONTH = "2025-07" 
+   # NOTE: Adjust the file path below to match your local setup.
     OUTPUT_PARQUET = "C:/Users/larbi/Desktop/My Doc/AICAUSAL/Layer3/QQQ_1min_2011-01_2025-07.parquet"
 
     cfg = ProviderConfig(symbol="QQQ", interval="1min", adjusted=False, extended_hours=True)
