@@ -5,11 +5,14 @@ Collect U.S. macro event-style data from FRED over a fixed window and produce a 
 
 
 
-  align_covariates.py : the objective of this component is to align end-of-day (EOD) covariates from an options features file to a minute-level control dataset (QQQ).which be consedered as Control sample in our project. the alignement will applies rules for pre-market / regular / after-market timestamps when selecting which EOD row to attach following the Key rules bellow : 
+## align_covariates.py 
+the objective of this component is to align end-of-day (EOD) covariates from an options features file to a minute-level control dataset (QQQ).which be consedered as Control sample in our project. the alignement will applies rules for pre-market / regular / after-market timestamps when selecting which EOD row to attach following the Key rules bellow : 
+
         - Pre-market (< 09:30 ET) and regular session (09:30–16:00 ET): use the previous available EOD covariate (previous trading day).
         - After-market (> 16:00 ET): prefer same-day EOD covariate if it exists, otherwise fall back to the previous available EOD covariate.
         - All timestamp handling and session classification use America/New_York timezone.
-    Inputs & Assumptions: 
+        
+  ### Inputs & Assumptions: 
         - control parquet (control_sample_QQQ.parquet or similar) contains:
             - a `timestamp` column (timezone-aware or naive) OR both `date` and `time` columns that can be combined.
         - covariates parquet (Options_features_L1_VF.parquet) contains:
@@ -23,8 +26,10 @@ Collect U.S. macro event-style data from FRED over a fixed window and produce a 
       - By default, rows with any NaNs are dropped before writing (use --keep-na to preserve them).
     
 
-  layer3_align_events_E1.py : this component is responsible of aligning the end-of-day (EOD) covariates from an options features file to a minute-level control dataset (QQQ) and Fed Macro Event .which be consedered as Treatment sample in our project.
+  ## layer3_align_events_E1.py 
+  this component is responsible of aligning the end-of-day (EOD) covariates from an options features file to a minute-level control dataset (QQQ) and Fed Macro Event .which be consedered as Treatment sample in our project.
       - Core rule: each event is joined to option EOD features from the prior trading session so covariates represent information available before the event (no lookahead). by using :
+      
         - Anchor_day is the event calendar day in ET;
         -  feat_date is the previous trading-session date relative to that anchor_day.
         - Session exceptions:
@@ -48,7 +53,7 @@ Collect U.S. macro event-style data from FRED over a fixed window and produce a 
         layer3_stageC_policy_used_E1.json — recorded alignment / feature-selection policy used.
   
   
-  layer3_align_events_E1.py
+## layer3_align_events_E1.py
 Purpose
 - Align each event to the previous trading-session features (feat_date), compute price_t0 and pre/post outcome metrics using minute/daily prices, and produce a treatment dataset ready for causal analysis.
 
