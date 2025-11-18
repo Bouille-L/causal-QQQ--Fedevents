@@ -38,8 +38,9 @@ The objective of this folder is to build and enginner features using option data
   ## Layer1_B.py
   this component objective is to load the option engineered featutes stored in parquet file and produces per tenor descriptive statistic, data-driven threshold proposals (liquidity/participation quality), and winsorization 
   caps for volatile ratios. It exports CSV summaries plus a concise Markdown report. so we can assess feature quality and guide cleaning choices in Layer-1C..
-    ### inputs : Options_features_L1_A.parquet (from Layer-1A)
-    ### outputs : 
+  ### inputs
+    Options_features_L1_A.parquet (from Layer-1A)
+  ### outputs
         - nan_coverage_all_columns.csv — NaN share for every column.
         - stats_<family>.csv — Percentiles & robust spread per feature family and tenor (e.g., stats_rel_spread.csv, stats_turnover.csv, …).
         - proposed_thresholds.csv — Tenor-specific keep thresholds for REL_SPREAD_*, OI_SUM_*, and (if present) DOLLAR_VOL_*.
