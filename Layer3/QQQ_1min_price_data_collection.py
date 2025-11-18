@@ -49,7 +49,7 @@ class ProviderConfig:
     adjusted: bool = False
     extended_hours: bool = True
     tolerance_minutes: int = 5
-    cache_dir: Path = Path("C:/Users/larbi/Desktop/My Doc/AICAUSAL/Layer3")  # store directly under Layer3 now
+    cache_dir: Path = Path("C:/Users/larbi/Desktop/My Doc/AICAUSAL/Layer3")  # NOTE: Adjust the file path below to match your local setup.
     requests_per_second: float = 5.0 
 
 
