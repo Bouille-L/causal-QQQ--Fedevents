@@ -68,25 +68,8 @@ Outputs
 - pandas, numpy, pyarrow
 - requests (if external data fetches are used)
 - python-dotenv (optional)
-
-
-## Requirements
-
-At minimum, the following Python packages are likely required to run the scripts of this layer 2:
-
-Required packages
-
-pandas (>=1.3)
-numpy (>=1.21)
-pyarrow (>=5.0) or fastparquet — for reading/writing parquet
-backports.zoneinfo (only if Python < 3.9) or use stdlib zoneinfo on 3.9+
-python-dateutil (installed with pandas)
-
-Optional / used in layer3_align_events_E1.py
-
-requests (if any external data fetches)
-python-dotenv (optional, for env config)
-pytz (only if you prefer pytz timezone handling instead of zoneinfo)
-
+- Use zoneinfo if you’re on Python 3.9+
+- Use backports.zoneinfo if you’re on Python < 3.9
+- Use pytz only if you specifically prefer its API
 
 
