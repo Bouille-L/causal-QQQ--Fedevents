@@ -2,7 +2,7 @@
 
 The objective of this folder is to build and enginner features using option data that can be used as cavariates in in our project, it devide to foor components :
 
-  ##Data_collection.py
+  ## Data_collection.py
   this is component we colllection option data from 2011-06-17 till 2025-06-16 using Orats API and due the computation cost, it was required for us  to use parquet file as outcome file format  due to large size of data and   also, to download the data by 2 years tim frame till we reach 2025 due the limitation of our API imposed by our suppliers and high cost computation, then we merged all this file in Layer1_A.py. 
 
   Layer1_A.py: this component is responsible of merging all parquet file we get from data_collection.py and form one parquet file tha host all option data from 2011 to 2025 then inside the same one file, we builds daily, tenorized option features dataset using features bellow. as Output, we get one parquet file where we have one row per date, with engineered option data features across tenor buckets. :
