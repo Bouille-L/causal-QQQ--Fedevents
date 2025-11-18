@@ -32,6 +32,8 @@ from pathlib import Path
 
 
 # --------- USER PATHS (edit as needed) ---------
+# NOTE: Adjust the file path below to match your local setup.
+data = pd.read_parquet("C:/Users/yourname/path/to/file.parquet")
 FRED_PARQUET   = r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer2\macro_events_2011-06-17_2025-06-16_allreports.parquet"
 OUTPUT_PARQUET = r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer2\events_unified_E1.parquet"
 # -----------------------------------------------
