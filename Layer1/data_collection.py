@@ -4,6 +4,8 @@ from datetime import datetime, timedelta
 import os
 
 # === CONFIG ===
+# NOTE: The data supplier API restricts loading large date ranges in a single request.
+# Therefore, we load data in 2-year spans from 2011 to 2025 and combine them to cover the full period.
 token = "96dc57a3-71fc-463e-8ba6-8c6714e24b39"
 ticker = "QQQ"
 start_date = datetime(2011, 6, 17)
