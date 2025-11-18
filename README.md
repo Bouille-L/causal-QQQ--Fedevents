@@ -1,4 +1,4 @@
-# AICAUSAL
+# Causal_QQQET_FedEevents
 
 Causal QQQ FedEevents is  a Causal Inference Pipeline for Fed Macroeconomic Events Using Options-Derived Covariates on QQQ. This is a multi-layered Python project for causal analysis of financial and economic events, focusing on the QQQ ETF and Federal Reserve events. 
 The project is organized into several layers, each responsible for different stages of data collection, cleaning, event alignment, and causal inference.
