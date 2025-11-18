@@ -11,6 +11,7 @@ logging.basicConfig(
 )
 
 # 1) Read and concatenate option-data parquet files
+# NOTE: Adjust the file path below to match your local setup.
 option_files = [
     r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer1\qqq_optiondata_1.parquet",
     r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer1\qqq_optiondata_2.parquet",
