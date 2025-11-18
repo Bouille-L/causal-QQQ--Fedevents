@@ -30,7 +30,6 @@ The objective of this folder is to build and enginner features using option data
                 Open-interest based (PCR_OI)
             Net open interest (NET_OI).
             Turnover (volume/open interest).
-            Volume mix shares (VOLMIX_*).
           Liquidity Composite
             Relative spread weighted by dollar flow (REL_SPREAD).
 
