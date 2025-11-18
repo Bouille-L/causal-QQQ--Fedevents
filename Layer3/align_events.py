@@ -31,11 +31,12 @@ import pytz
 from datetime import datetime, time, timedelta
 
 # -------- Paths --------
+# NOTE: Adjust the file path below to match your local setup.
 L1C_FEATURES = r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer1\Options_features_L1_VF.parquet"
 EVENTS_PARQUET = r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer2\events_unified_E1.parquet"
 MINUTE_PARQUET = r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer3\QQQ_1min_2011-01_2025-07.parquet"
 
-
+# NOTE: Adjust the file path below to match your local setup.
 OUT_PARQUET  = r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer3\\Treatment_dataset_Fedmacr-_event\events_aligned_L3_E1.parquet"
 OUT_SUMMARY  = r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer3\\Treatment_dataset_Fedmacr-_event\events_aligned_L3_summary_E1.txt"
 OUT_CONFIG   = r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer3\\Treatment_dataset_Fedmacr-_event\layer3_stageC_policy_used_E1.json"
