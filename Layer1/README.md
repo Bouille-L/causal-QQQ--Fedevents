@@ -38,22 +38,22 @@ The objective of this folder is to build and enginner features using option data
   ## Layer1_B.py
   this component objective is to load the option engineered featutes stored in parquet file and produces per tenor descriptive statistic, data-driven threshold proposals (liquidity/participation quality), and winsorization 
   caps for volatile ratios. It exports CSV summaries plus a concise Markdown report. so we can assess feature quality and guide cleaning choices in Layer-1C..
-    inputs : Options_features_L1_A.parquet (from Layer-1A)
-    outputs : 
-        nan_coverage_all_columns.csv — NaN share for every column.
-        stats_<family>.csv — Percentiles & robust spread per feature family and tenor (e.g., stats_rel_spread.csv, stats_turnover.csv, …).
-        proposed_thresholds.csv — Tenor-specific keep thresholds for REL_SPREAD_*, OI_SUM_*, and (if present) DOLLAR_VOL_*.
-        proposed_winsor_caps.csv — Tenor-specific p1/p99 caps for volatile ratios (PCR_*, TURNOVER_*).
-        layer1b_report.md — Human-readable summary (inputs, rows/cols, detected tenors/families, policy blurbs, and rationale).
+    ### inputs : Options_features_L1_A.parquet (from Layer-1A)
+    ### outputs : 
+        - nan_coverage_all_columns.csv — NaN share for every column.
+        - stats_<family>.csv — Percentiles & robust spread per feature family and tenor (e.g., stats_rel_spread.csv, stats_turnover.csv, …).
+        - proposed_thresholds.csv — Tenor-specific keep thresholds for REL_SPREAD_*, OI_SUM_*, and (if present) DOLLAR_VOL_*.
+        - proposed_winsor_caps.csv — Tenor-specific p1/p99 caps for volatile ratios (PCR_*, TURNOVER_*).
+        
 
 
   ## Layer1_C.py
   thic component is final component fo the layer 1 and its objective is to produce a clean, modeling-ready option features by executing this three  steps concluded after reviewng the outcomes reports from layer1_B:
-      Dropping short-tenor buckets (D01, D02, D03, D05, D07) and any derived short-tenor features (TS_7_30).
-      Masking (to NaN) per-tenor values that fail quality thresholds (liquidity & participation).
-      Winsorizing heavy-tailed ratios (PCR_*, TURNOVER_*) using 1st/99th percentile caps from Layer-1B.
-      Emitting a summary, exact config used, and a column manifest.
-  as outputs, we get : 
+      - Dropping short-tenor buckets (D01, D02, D03, D05, D07) and any derived short-tenor features (TS_7_30).
+      - Masking (to NaN) per-tenor values that fail quality thresholds (liquidity & participation).
+      - Winsorizing heavy-tailed ratios (PCR_*, TURNOVER_*) using 1st/99th percentile caps from Layer-1B.
+      - Emitting a summary, exact config used, and a column manifest.
+  ### as outputs, we get : 
       Options_features_L1_VF.parquet — Cleaned, tenor-filtered features (Date-indexed, modeling-ready).
       L1C_cleaning_summary.csv — What was masked per tenor (thresholds) and clipped per column (winsorization).
       L1C_cleaning_config_used.json — Exact tenors dropped/kept, thresholds, and winsor caps (full reproducibility).
