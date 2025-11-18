@@ -48,6 +48,7 @@ logger = logging.getLogger(__name__)
 @dataclass
 class Config:
     # Input
+    # NOTE: Adjust the file path below to match your local setup.
     parquet_path: str = r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer3\Treatment_dataset_Fedmacr-_event\events_aligned_L3_E1.parquet"
     time_col: str = "time_et"
     event_type_col: str = "event_type"
