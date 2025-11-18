@@ -11,6 +11,7 @@ import logging
 
 
 # Configuration
+# NOTE: Adjust the file path below to match your local setup.
 IN_PARQUET  = r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer1\Options_features_L1_A.parquet"
 OUT_DIR     = r"C:\Users\larbi\Desktop\My Doc\AICAUSAL\Layer1\reports_layer1b"
 # Percentiles to compute
